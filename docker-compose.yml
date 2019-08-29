@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+  db.mongo.dev:
+    image: tutum/mongodb
+    container_name: db.mongo.dev
+    ports:
+      - "27017:27017"
+    environment:
+      - AUTH = no
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+
+networks:
+    backend:
